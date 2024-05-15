@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Pais } from '../pais';
 
 @Component({
   selector: 'app-pais-list',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './pais-list.component.css'
 })
 export class PaisListComponent {
+  books: Array<Pais> = [];
+  constructor() { }
 
+ ngOnInit() {
+ }
+ 
 }

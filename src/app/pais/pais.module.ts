@@ -5,11 +5,12 @@ import { PaisListComponent } from './pais-list/pais-list.component';
 
 
 @NgModule({
-  declarations: [
-    PaisListComponent
-  ],
+  
   imports: [
     CommonModule
-  ]
+  ],
+  
+  exports: [PaisListComponent],
+  declarations: [PaisListComponent]
 })
 export class PaisModule { }
