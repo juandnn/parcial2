@@ -31,6 +31,9 @@
             </tr>
             </tbody>
         </table>
+        <div class="container-fluid">
+            <p>El pais mas viejo es {{ paisViejo }} y se unió en {{anoViejo}} </p>
+        </div>
         <div class="col">
             <div *ngIf="selected">
                 <app-pais-detail [paisDetail]="selectedPais"></app-pais-detail>

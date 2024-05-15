@@ -14,13 +14,26 @@ export class PaisListComponent implements OnInit {
  selectedPais!: Pais;
  selected = false;
 
+ paisViejo: string = "";
+ anoViejo: number = 10000;
+
  constructor(private paisService: PaisService) { }
 
  getPaises(): void {
    this.paisService.getPaises().subscribe((paises) => {
      this.paises = paises;
-   });
+     this.updatePaisViejo()
+    });
  }
+
+updatePaisViejo(): void {
+  this.paises.forEach((pais) => {
+    if (pais.formation_year < this.anoViejo) {
+      this.paisViejo = pais.name;
+      this.anoViejo = pais.formation_year;
+    }
+  });
+}
  
  onSelected(pais: Pais): void {
   this.selected = true;
