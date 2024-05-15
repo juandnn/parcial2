@@ -11,6 +11,8 @@ import { PaisService } from '../pais.service';
 export class PaisListComponent implements OnInit {
 
  paises: Array<Pais> = [];
+ selectedPais!: Pais;
+ selected = false;
 
  constructor(private paisService: PaisService) { }
 
@@ -19,6 +21,11 @@ export class PaisListComponent implements OnInit {
      this.paises = paises;
    });
  }
+ 
+ onSelected(pais: Pais): void {
+  this.selected = true;
+  this.selectedPais = pais;
+}
 
  ngOnInit() {
    this.getPaises();

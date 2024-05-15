@@ -1,5 +1,7 @@
 <p>pais-list works!</p>
 
+
+
 <div class="container-fluid">
     <div class="col-6">
       <table class="table table-dark table-striped">
@@ -17,8 +19,8 @@
               <dd>{{ p.id }}</dd>
             </td>
             <td>
-              <dd>{{ p.name }}</dd>
-            </td>
+            <dd (click)="onSelected(p)">{{ p.name }}</dd>
+          </td>
             <td>
               <dd>{{ p.capital }}</dd>
             </td>
@@ -28,5 +30,10 @@
           </tr>
         </tbody>
       </table>
+      <div class="col">
+        <div *ngIf="selected">
+            <app-pais-detail [paisDetail]="selectedPais"></app-pais-detail>
+        </div>
+      </div>
     </div>
   </div>
