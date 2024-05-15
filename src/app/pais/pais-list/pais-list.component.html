@@ -1,1 +1,32 @@
 <p>pais-list works!</p>
+
+<div class="container-fluid">
+    <div class="col-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="h4">#</th>
+            <th class="h4">Nombre</th>
+            <th class="h4">Capital</th>
+            <th class="h4">Año</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of paises">
+            <td>
+              <dd>{{ p.id }}</dd>
+            </td>
+            <td>
+              <dd>{{ p.name }}</dd>
+            </td>
+            <td>
+              <dd>{{ p.capital }}</dd>
+            </td>
+            <td>
+                <dd>{{ p.formation_year }}</dd>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
